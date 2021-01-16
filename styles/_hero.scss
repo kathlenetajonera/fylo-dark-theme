@@ -1,0 +1,151 @@
+.hero {
+    min-height: 100vh;
+    background-color: $secondary-bg;
+    padding: 2rem 1.5rem;
+    position: relative;
+
+    &::after {
+        content: "";
+        background-image: url("/images/bg-curvy-mobile-2.png");
+        background-size: contain;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-repeat: no-repeat;
+        transform: translateY(50%);
+    }
+
+    @include mediaQuery(tablet) {
+        padding: 3rem;
+        background-image: url("/images/bg-curvy-desktop.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: bottom;
+
+        &::after {
+            content: "";
+            background-image: none;
+        }
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo {
+            width: Min(142px, 30%);
+
+            img {
+                display: block;
+                max-width: 100%;
+            }
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+
+            li {
+                padding-left: 1rem;
+
+                @include mediaQuery(tablet) {
+                    padding-left: 3rem;
+                }
+
+                a {
+                    font-family: $heading-font;
+                    font-size: .8rem;
+                    border-bottom: 1px solid transparent;
+
+                    &:hover {
+                        font-weight: 700;
+                        border-bottom: 1px solid $white;
+                    }
+
+                    &::after {
+                        content: attr(title);
+                        display: block;
+                        font-weight: 700;
+                        height: 0;
+                        overflow: hidden;
+                        visibility: hidden;
+                    }
+
+                    @include mediaQuery(tablet) {
+                        font-size: .9rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .container {
+        display: grid;
+        grid-gap: 2rem;
+        margin: 4rem auto;
+        position: relative;
+        z-index: 999;
+        width: Min(644px, 100%);
+
+        .text {
+            order: 1;
+            text-align: center;
+            color: $white;
+
+            h1 {
+                line-height: 2.3rem;
+
+                @include mediaQuery(tablet) {
+                    font-size: 2.2rem;
+                    line-height: 3rem;
+                }
+            }
+
+            p {
+                margin: 1rem auto;
+                font-size: .9rem;
+                width: Min(515px, 100%);
+
+                @include mediaQuery(tablet) {
+                    font-size: 1rem;
+                }
+            }
+
+            .primary-btn {
+                margin-top: 1rem;
+
+                @include mediaQuery(tablet) {
+                    width: 40%;
+                }
+            }
+        }
+
+        .image {
+            img {
+                max-width: 100%;
+                display: block;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+.primary-btn {
+    display: inline-block;
+    background: linear-gradient(to right, $primary-btn);
+    padding: 1rem;
+    font-family: $heading-font;
+    font-weight: 700;
+    font-size: .8rem;
+    color: $white;
+    border-radius: 2rem;
+    width: 80%;
+    cursor: pointer;
+
+    &:hover {
+        background: #8cdae4;
+    }
+}

@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+//colors
+$main-bg: hsl(218, 28%, 13%);
+$secondary-bg: hsl(217, 28%, 15%);
+$testi-bg: hsl(219, 30%, 18%);
+$footer-bg: hsl(216, 53%, 9%);
+$white: hsl(0, 0%, 100%);
+$primary-btn: hsl(176, 68%, 64%), #42b0d1;
+$text-link: hsl(176, 68%, 64%);
+$error: hsl(0, 100%, 63%);
+
+
+//font-family
+$heading-font: "Raleway", sans-serif;
+$body-font: "Open Sans", sans-serif;
+
+//breakpoints
+$mediaBreakpoints: ("mobile": "375px", "tablet": "768px", "desktop": "1024px", "desktop-lg": "1300px");

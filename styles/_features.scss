@@ -1,0 +1,234 @@
+.features {
+    background-color: $main-bg;
+    padding: 2rem 1.5rem 0;
+    position: relative;
+
+    @include mediaQuery(tablet) {
+        padding: 2rem 3rem 0;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-gap: 4rem;
+        padding: 4rem 0;
+        width: Min(850px, 100%);
+        margin: 0 auto;
+
+        @include mediaQuery(desktop) {
+            grid-gap: 6rem;
+        }
+        
+        .card {
+            text-align: center;
+
+            h2 {
+                font-size: 1.2rem;
+                margin: 2rem 0 1rem;
+            }
+
+            p {
+                font-size: .9rem;
+            }
+
+            .icon {
+                height: 80px;
+            }
+        }
+    }
+
+    .grid-two-col {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-gap: 2rem;
+        align-items: center;
+        padding: 4rem 0;
+        margin: 0 auto;
+        width: Min(1173px, 100%);
+
+        @include mediaQuery(desktop) {
+            grid-gap: 4rem;
+        }
+
+        .text {
+            order: 1;
+
+            h1 {
+                font-size: 1.2rem;
+                margin: 2rem 0;
+
+                @include mediaQuery(tablet) {
+                    font-size: 2.2rem;
+
+                    span {
+                        display: block;
+                    }
+                }
+            }
+
+            p {
+                font-size: .9rem;
+            }
+
+            .text-link {
+                display: inline-block;
+                font-family: $body-font;
+                color: $text-link;
+                margin: 1.5rem 0;
+                border-bottom: 1px solid $text-link;
+
+                &::after {
+                    content: url("/images/icon-arrow.svg");
+                    vertical-align: middle;
+                    margin-left: .5rem;
+                }
+
+                &:hover {
+                    color: $white;
+                    border-bottom: 1px solid $white;
+
+                    &::after {
+                        content: url("/images/icon-arrow-white.svg");
+                    }
+                }
+            }
+        }
+
+        .image {
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+
+    .grid-three-col {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-gap: 2rem;
+        padding-top: 4rem;
+        margin: 0 auto;
+        width: Min(1108px, 100%);
+        position: relative;
+        z-index: 999;
+
+        .card {
+            background-color: $testi-bg;
+            padding: 1.5rem;
+            border-radius: .5rem;
+            position: relative;
+
+            p {
+                font-size: .8rem;
+            }
+
+            .author {
+                display: flex;
+                align-items: center;
+                margin-top: 1rem;
+
+                img {
+                    max-width: 40px;
+                    border-radius: 50%;
+                    margin-right: .5rem;
+                }
+
+                .details {
+                    .name {
+                        font-weight: 700;
+                        margin-bottom: .3rem;
+                    }
+
+                    p:last-child {
+                        font-size: .6rem;
+                    }
+                }
+            }
+
+            &:first-child::before {
+                content: url("/images/bg-quotes.png");
+                position: absolute;
+                top: -20%;
+                left: .5rem;
+                z-index: -1;
+            }
+        }
+    }
+
+    .banner {
+        background-color: $secondary-bg;
+        text-align: center;
+        border-radius: .5rem;
+        padding: 3rem 2rem;
+        transform: translateY(50%);
+        width: Min(780px, 100%);
+        margin: 0 auto;
+
+        h1 {
+            font-size: 1.3rem;
+
+            @include mediaQuery(tablet) {
+                font-size: 1.8rem;
+            }
+        }
+
+        p {
+            font-size: .8rem;
+            margin: 1rem auto;
+
+            @include mediaQuery(tablet) {
+                width: 80%;
+            }
+        }
+
+        .email-form {
+            display: grid;
+            grid-gap: 1rem;
+            padding-top: 1rem;
+
+            @include mediaQuery(tablet) {
+                grid-template-columns: 2fr 1fr;
+                width: 90%;
+                margin: 0 auto;
+            }
+
+            .field {
+                width: 100%;
+
+                input {
+                    width: 100%;
+                    padding: 1rem 2rem;
+                    border-radius: 2rem;
+                    font-family: $body-font;
+                }
+
+                .result-text {
+                    display: none;
+
+                    &.error {
+                        display: block;
+                        color: $error;
+                        margin: 0;
+                        font-weight: 700;
+                        margin-top: .35rem;
+                        text-align: left;
+                        padding-left: 2rem;
+                        font-size: .7rem;
+
+                        @include mediaQuery(tablet) {
+                            position: absolute;
+                        }
+                    }
+
+                    &.valid {
+                        @extend .error;
+                        color: rgb(10, 196, 10);
+                    }
+                }
+            }
+
+            .primary-btn {
+                width: 100%;
+            }
+        }
+    }
+}

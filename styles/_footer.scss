@@ -1,0 +1,151 @@
+.footer {
+    background-color: $footer-bg;
+    padding: 250px 2rem 2rem;
+
+    @include mediaQuery(tablet) {
+        padding: 200px 3rem 4rem;
+    }
+
+    @include mediaQuery(desktop) {
+        padding-left: 6rem;
+    }
+
+    .logo {
+        max-width: 142px;
+        display: block;
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+    }
+
+    .grid-five-col {
+        display: grid;
+        grid-gap: 3rem;
+        margin-top: 3rem;
+
+        @include mediaQuery(tablet) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @include mediaQuery(desktop) {
+            grid-template-columns: 2fr 1fr repeat(3, .5fr);
+        }
+
+        @include mediaQuery(desktop-lg) {
+            grid-template-columns: repeat(2, 1fr) repeat(3, .5fr);
+        }
+
+        .details {
+            @include mediaQuery(tablet) {
+                display: grid;
+                grid-template-columns: 2fr 1fr;
+                grid-gap: 2rem;
+                grid-column: 1/4;
+            }
+
+            @include mediaQuery(desktop) {
+                &.span-2 {
+                    grid-column: span 2;
+                }
+            }
+
+            .detail {
+                display: flex;
+                align-items: flex-start;
+                margin-bottom: 1rem;
+
+                .icon {
+                    margin-right: 1.2rem;
+
+                    svg {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+        }
+
+        .footer-menu {
+            display: grid;
+            grid-gap: 2rem;
+
+            @include mediaQuery(tablet) {
+                grid-template-columns: repeat(2, 1fr);
+                grid-column: 1/3;
+            }
+
+            @include mediaQuery(desktop) {
+                grid-column: 3/5;
+            }
+
+            .footer-links {
+                li {
+                    margin: 1rem 0;
+
+                    @include mediaQuery(tablet) {
+                        margin: 0 0 1rem;
+                    }
+
+                    a {
+                        font-family: $body-font;
+
+                        &:hover {
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+        }
+
+        .social-media {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @include mediaQuery(tablet) {
+                justify-content: flex-start;
+                align-items: flex-start;
+            }
+
+            @include mediaQuery(desktop) {
+                grid-column: initial;
+            }
+
+            .socmed {
+                width: 30px;
+                height: 30px;
+                border: 1px solid $white;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: .5rem;
+                cursor: pointer;
+
+                i {
+                    color: $white;
+                }
+
+                &:hover {
+                    border: 1px solid $text-link;
+
+                    i {
+                        color: $text-link;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    padding: 1rem 0;
+    font-family: $body-font;
+    color: $main-bg;
+
+    a { color: hsl(228, 45%, 44%); }
+}
